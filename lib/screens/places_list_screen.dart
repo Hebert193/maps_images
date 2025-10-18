@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:maps_imagens/provider/greate_places.dart';
 import 'package:maps_imagens/utilis/app_rotas.dart';
+import 'package:provider/provider.dart';
 
 class PlacesListScreen extends StatelessWidget {
   @override
@@ -16,7 +18,10 @@ class PlacesListScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const Center(child: CircularProgressIndicator()),
+      body: Consumer<GreatePlaces>(
+      child: const Center
+      (child: CircularProgressIndicator()),
+      ),
     );
   }
 }

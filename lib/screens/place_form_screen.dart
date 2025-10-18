@@ -18,7 +18,20 @@ class _PlaceFormScreenState extends State<PlaceFormScreen> {
     pickedImage = pickedImage;
   }
 
-  void _submitForm() {} // metodo do botão
+  void _submitForm() {
+    if (_titleController.text.isEmpty || pickedImage == null) {
+      return;
+    }
+
+    Provider.of<GreatPlaces>(context, listen: false).addPlace(
+      _titleController.text,
+      pickedImage!
+    );
+
+    Navigator.of(context).pop();
+
+
+  } // metodo do botão
 
   @override
   Widget build(BuildContext context) {
